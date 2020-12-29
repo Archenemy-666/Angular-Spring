@@ -1,0 +1,50 @@
+<table>
+    <tr>
+        <th>
+            empId
+        </th>
+        <th>
+            empName
+        </th>
+        <th>
+            salary
+        </th>
+        <th>
+            gender
+        </th>
+        <th>
+            doj
+        </th>
+        <th>
+            loginId
+        </th>
+        <th>
+            paswword
+        </th>
+    </tr>
+    <tr *ngFor = 'let employee of employees'>
+        <td>
+            {{ employee.empId }}
+        </td>
+        <td>
+            {{ employee.empName }}
+        </td>
+        <td>
+            {{ employee.salary }}
+        </td>
+        <td>
+            {{ employee.gender }}
+        </td>
+        <td>
+            {{ employee.doj }}
+        </td>
+        <td>
+            {{ employee.loginId }}
+        </td>
+        <td>
+            {{ employee.password }}
+        </td>
+
+    </tr>
+
+</table>
