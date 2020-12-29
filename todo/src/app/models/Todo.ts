@@ -1,6 +1,6 @@
-export class Todo {
+export class Todo{
     id?:number;
-    title?:string ;
+    title?:string;
     completed?:boolean;
 
 }

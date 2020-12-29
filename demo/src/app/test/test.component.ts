@@ -22,7 +22,9 @@ export class TestComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
   }
+
   showMessage() : void {
     alert('show method is working..')
     console.log(this.message)

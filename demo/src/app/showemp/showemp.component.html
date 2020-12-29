@@ -30,13 +30,13 @@
             {{ employee.empName }}
         </td>
         <td>
-            {{ employee.salary }}
+            {{ employee.salary | currency:'USD' }}
         </td>
         <td>
             {{ employee.gender }}
         </td>
         <td>
-            {{ employee.doj }}
+            {{ employee.doj | date:'dd-MMMM-yyyy'}}
         </td>
         <td>
             {{ employee.loginId }}
