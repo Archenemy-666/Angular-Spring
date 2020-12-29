@@ -11,6 +11,7 @@ export class TestComponent implements OnInit {
   salary : number ;
   hobbies : any; // array of any 
   address : any ;
+  message : string;
 
   constructor() { 
     this.age = 20 ;
@@ -18,11 +19,13 @@ export class TestComponent implements OnInit {
     this.salary = 2000000 ;
     this.hobbies = [' basketball ' , ' art ' , ' movie critique '];
     this.address = {doorNo:' 10-10 ' , street : ' b-36 ' , colony : ' d.d.colony '};
-    
-
   }
 
   ngOnInit(): void {
+  }
+  showMessage() : void {
+    alert('show method is working..')
+    console.log(this.message)
   }
 
 }
