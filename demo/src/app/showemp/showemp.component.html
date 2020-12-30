@@ -1,50 +1,62 @@
-<table>
-    <tr>
-        <th>
-            empId
-        </th>
-        <th>
-            empName
-        </th>
-        <th>
-            salary
-        </th>
-        <th>
-            gender
-        </th>
-        <th>
-            doj
-        </th>
-        <th>
-            loginId
-        </th>
-        <th>
-            paswword
-        </th>
-    </tr>
-    <tr *ngFor = 'let employee of employees'>
-        <td>
-            {{ employee.empId }}
-        </td>
-        <td>
-            {{ employee.empName }}
-        </td>
-        <td>
-            {{ employee.salary | currency:'USD' }}
-        </td>
-        <td>
-            {{ employee.gender }}
-        </td>
-        <td>
-            {{ employee.doj | date:'dd-MMMM-yyyy'}}
-        </td>
-        <td>
-            {{ employee.loginId }}
-        </td>
-        <td>
-            {{ employee.password }}
-        </td>
+<div class ="container">
+    <table class = 'table  table-dark table-striped table-hover' align ='center'>
+        <thead>
+            <tr class = "bg-danger bg-info text-black ">
+                 <th>
+                    empId
+                </th>
+                 <th>
+                    empName
+                </th>
+                <th>
+                     salary
+                </th>
+                <th>
+                    gender
+                </th>
+                <th>
+                    doj
+                </th>
+                <th>
+                     loginId
+                </th>
+                <th>
+                    paswword
+                </th>
+                <th>
+                    experience
+                </th>
+             </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = 'let employee of employees'>
+                <td>
+                    {{ employee.empId }}
+                </td>
+                <td>
+                    {{ employee.empName | gender : employee.gender }}
+                </td>
+                <td>
+                    {{ employee.salary | currency:'USD' }}
+                </td>
+                <td>
+                    {{ employee.gender }}
+                </td>
+                <td>
+                    {{ employee.doj | date:'dd-MMMM-yyyy'}}
+                </td>
+                <td>
+                    {{ employee.loginId }}
+                </td>
+                <td>
+                    {{ employee.password }}
+                </td>
+                <td>
+                    {{ employee.doj | experience}}
+                </td>
 
-    </tr>
+            </tr>
+        </tbody>
 
-</table>
+    </table>
+</div>

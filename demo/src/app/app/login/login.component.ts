@@ -20,6 +20,9 @@ export class LoginComponent implements OnInit {
     console.log(this.loginId)
     console.log(this.password)
   }
+  submitLoginForm(loginForm):void{
+    return console.log(loginForm.value);
+  }
 
 
 }

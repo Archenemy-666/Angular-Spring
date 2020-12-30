@@ -1,0 +1,32 @@
+<h1 text-align = "center">Register</h1>
+<form #registerForm = "ngForm" (ngSubmit) = "showRegister(registerForm)" novalidate >
+    <div>
+        <div>
+            <input  type = "text"  class = "form-control " placeholder = "name" name = 'name' ngModel #name = "ngModel"  required>
+        </div>
+        <div>
+            <input  type = "text"  class = "form-control " placeholder = "enter userName .. " name = 'userName' ngModel #userName = "ngModel"  required  minlength=4>
+        </div>
+        <div>
+            <input type = "text" class = "form-control " placeholder=" enter emailId here .. "name = 'emailId' ngModel #emailID = "ngModel" required minlength=4 >
+        </div>
+        <div>
+            <input type = "text" class = "form-control " placeholder=" enter password here .. "name = 'password' ngModel #password = "ngModel" required minlength=4>
+        </div>
+
+        <div>
+            <input type = "text" class = "form-control " placeholder=" enter contact here .. " name = 'contact' ngModel #contact = "ngModel" required minlength=9 >
+        </div>
+        <button class = "btn btn-primary" [disabled] ="!registerForm.valid">Register</button>
+    </div>
+</form>
+<div   *ngIf = "registerForm.touched && name.errors?.required">please enter name... </div>
+<div   *ngIf = "registerForm.touched && userName.errors?.required">please enter Username... </div>
+<div   *ngIf = "registerForm.touched && emailId.errors?.required">please enter emailId... </div>
+<div   *ngIf = "registerForm.touched && password.errors?.required">please enter password... </div>
+<div   *ngIf = "registerForm.touched && contact.errors?.required">please enter contact... </div>
+<div   *ngIf = "userName.errors?.minlength">enter min of 4 char </div>
+<div    *ngIf = "password.errors?.minlength">enter min of 4 char </div>
+<div    *ngIf = "contact.errors?.minlength">enter min of 9 char </div>
+
+

@@ -1,8 +1,23 @@
 
-<h1> enter login Id and Password !! </h1>
+<h1 class = "container"> enter login Id and Password !! </h1> <br>
+<!--
 <div>
     <input type = "text" placeholder = "loginId" [(ngModel)] = 'loginId'><br>
     <input type = "password" placeholder="password" [(ngModel)] = 'password'><br>
     <button (click) ='showDetails()'>click Here</button>
 </div>
-
+-->
+<div class = "container">
+<form #loginForm = "ngForm" (ngSubmit) = "submitLoginForm(loginForm)" novalidate>
+    <div>
+        <input  type = "text"  class = "form-control "   placeholder = "loginId" name = 'loginId' ngModel #loginId = "ngModel" minlength=4 required><br>
+    </div>
+   
+    <input type = "password"  class = "form-control" placeholder="password" name = 'password' ngModel #password = "ngModel" minlength= 4 required><br>
+    <button class = "btn btn-primary" [disabled] ="!loginForm.valid">loginId</button>
+</form>
+</div>
+<div   *ngIf = "loginForm.touched && loginId.errors?.required">please enter loginId... </div>
+<div    *ngIf = "loginForm.touched && password.errors?.required">please enter password... </div>
+<div   *ngIf = "loginId.errors?.minlength">enter min of 4 char </div>
+<div    *ngIf = "password.errors?.minlength">enter min of 4 char </div>
