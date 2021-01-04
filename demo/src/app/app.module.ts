@@ -14,13 +14,14 @@ import { ProductComponent } from './product/product.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component'
 import { RouterModule, Routes } from '@angular/router';
-
+import { AuthGuard } from './auth.guard';
+import { HttpClientModule} from '@angular/common/http';
 
 const appRoot:Routes = [
   {path : 'login' , component : LoginComponent},
   {path : 'registration' , component : RegisterComponent},
-  {path : 'products' , component : ProductComponent},
-  {path : 'employee' , component : ShowempComponent}
+  {path : 'products' ,canActivate : [AuthGuard] , component : ProductComponent},
+  {path : 'employee' ,canActivate : [AuthGuard] , component : ShowempComponent}
 ] ;
 
 
@@ -41,7 +42,9 @@ const appRoot:Routes = [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(appRoot)
+    RouterModule.forRoot(appRoot),
+    HttpClientModule
+    
    
    
   ],

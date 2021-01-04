@@ -1,0 +1,10 @@
+1.Data Binding
+2.Pipes (Pre defined and Custom)
+3.Directives (*ngFor)
+4.Routing
+5.Bootstrap
+6.Components
+7.Validation
+8.Dependency Injection
+9.Authentication (Auth Guard)
+10.Service

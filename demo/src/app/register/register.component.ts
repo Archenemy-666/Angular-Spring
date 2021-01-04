@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmpService } from '../emp.service';
 
 @Component({
   selector: 'app-register',
@@ -13,9 +14,12 @@ export class RegisterComponent implements OnInit {
   password : any;
   contact : number ;
 
-  constructor() { }
+  constructor(public empService : EmpService) { }
+
+  countryList : any ;
 
   ngOnInit(): void {
+    this.empService.getAllCountries().subscribe((data:any) => {this.countryList = data; console.log(data);});
   }
   showRegister(registerForm) : void {
     alert(" you are registered");

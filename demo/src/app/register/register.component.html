@@ -13,11 +13,21 @@
         <div>
             <input type = "text" class = "form-control " placeholder=" enter password here .. " name = 'password' ngModel #password = "ngModel" required minlength=4>
         </div>
+        <div>
+            <input type = "date" class = "form-control " placeholder=" enter date here .. " name = 'doj' ngModel #doj = "ngModel" required minlength=1>
+        </div>
+        <div>
+            <select  class = "form-control " placeholder=" select country  " name = 'country' ngModel #country = "ngModel" required minlength=1>
+                <option value = {{country.alpha3Code}} *ngFor = " let country of countryList ">{{country.name}}</option>
+            </select> 
+        </div>
 
         <div>
             <input type = "text" class = "form-control " placeholder=" enter contact here .. " name = 'contact' ngModel #contact = "ngModel" required minlength=9 >
-        </div>
+        </div><br>
+        <div class="text-center">
         <button class = "btn btn-primary" [disabled] ="!registerForm.valid">Register</button>
+        </div>
     </div>
 </form>
 <div   *ngIf = "registerForm.touched && name.errors?.required">please enter name... </div>

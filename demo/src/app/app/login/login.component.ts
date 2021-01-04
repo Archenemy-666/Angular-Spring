@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthGuard } from 'src/app/auth.guard';
+import { EmpService } from 'src/app/emp.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +12,8 @@ export class LoginComponent implements OnInit {
 
   loginId : string ;
   password : string ;
-  constructor() {}
+  
+  constructor(public router : Router , public empService : EmpService) {}
    
 
   ngOnInit(): void {
@@ -21,7 +25,12 @@ export class LoginComponent implements OnInit {
     console.log(this.password)
   }
   submitLoginForm(loginForm):void{
-    return console.log(loginForm.value);
+    console.log(loginForm.value);
+    if(loginForm.value.loginId === "admin" && loginForm.value.password === 'admin'){
+      this.router.navigate(['products']);
+      this.empService.setUserLoggedIn();
+      
+    }
   }
 
 
