@@ -16,12 +16,14 @@ import { FooterComponent } from './footer/footer.component'
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
 import { HttpClientModule} from '@angular/common/http';
+import { EmpbyidComponent } from './empbyid/empbyid.component';
 
 const appRoot:Routes = [
   {path : 'login' , component : LoginComponent},
   {path : 'registration' , component : RegisterComponent},
   {path : 'products' ,canActivate : [AuthGuard] , component : ProductComponent},
-  {path : 'employee' ,canActivate : [AuthGuard] , component : ShowempComponent}
+  {path : 'employee' ,canActivate : [AuthGuard] , component : ShowempComponent},
+  {path : 'empbyid' ,canActivate : [AuthGuard] , component : EmpbyidComponent}
 ] ;
 
 
@@ -36,7 +38,8 @@ const appRoot:Routes = [
     RegisterComponent,
     ProductComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    EmpbyidComponent
   ],
   imports: [
     BrowserModule,

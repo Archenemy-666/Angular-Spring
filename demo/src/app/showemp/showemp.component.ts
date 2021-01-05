@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmpService } from '../emp.service';
 
 @Component({
   selector: 'app-showemp',
@@ -10,13 +11,14 @@ export class ShowempComponent implements OnInit {
 
   employees : any;
  
-  constructor() {
+  constructor(public empService : EmpService) {
 
-    this.employees = [{empId : "1" , empName : "sid1" , salary : "123" , gender : "male" , doj : "12/12/12" , loginId : "sid1" , password: "sid1"},
-    {empId : "2" , empName : "sid2" , salary : "1234" , gender : "male" , doj : "12/12/13" , loginId : "sid2" , password: "sid2"},
-    {empId : "3" , empName : "sid3" , salary : "12345" , gender : "male" , doj : "12/12/14" , loginId : "sid3" , password: "sid3"}]
+    //this.employees = [{empId : "1" , empName : "sid1" , salary : "123" , gender : "male" , doj : "12/12/12" , loginId : "sid1" , password: "sid1"},
+    //{empId : "2" , empName : "sid2" , salary : "1234" , gender : "male" , doj : "12/12/13" , loginId : "sid2" , password: "sid2"},
+   // {empId : "3" , empName : "sid3" , salary : "12345" , gender : "male" , doj : "12/12/14" , loginId : "sid3" , password: "sid3"}]
   }
   ngOnInit(): void {
+    this.empService.getAllEmployees().subscribe((data:any) => {this.employees = data; console.log(data);});
   }
 
   }

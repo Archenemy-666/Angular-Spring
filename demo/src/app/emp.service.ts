@@ -30,4 +30,15 @@ export class EmpService {
    getAllCountries(): any{
      return this.httpClient.get('https://restcountries.eu/rest/v2/all');
    }
+   getAllEmployees(): any{
+    return this.httpClient.get('showAllEmployees');
+  }
+  getEmpById(empId: any): any {
+    return this.httpClient.get('showEmployeeById/' + empId);
+  }
+  register(regForm: any): any {
+    return this.httpClient.post('registerEmp/', regForm);
+  }
+
+
 }

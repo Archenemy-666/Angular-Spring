@@ -40,10 +40,10 @@
         <tbody>
             <tr *ngFor = 'let employee of employees'>
                 <td>
-                    {{ employee.empId }}
+                    {{ employee.employeeId }}
                 </td>
                 <td>
-                    {{ employee.empName | gender : employee.gender }}
+                    {{ employee.employeeName | gender : employee.gender }}
                 </td>
                 <td>
                     {{ employee.salary | currency:'USD' }}
@@ -55,7 +55,7 @@
                     {{ employee.doj | date:'dd-MMMM-yyyy'}}
                 </td>
                 <td>
-                    {{ employee.loginId }}
+                    {{ employee.UserName }}
                 </td>
                 <td>
                     {{ employee.password }}
