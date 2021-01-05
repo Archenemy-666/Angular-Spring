@@ -1,0 +1,22 @@
+<!-- empId, empName, gender, salary, doj, mobile, country, loginId, password-->
+
+<div class="container">
+    <form #regForm="ngForm"  class="form-group" (ngSubmit)="registerUser(regForm.value)">
+        <input type="number" class="form-group"  Placeholder="empId"   name="empId"  ngModel><br/>
+        <input type="text"   class="form-group"  Placeholder="empName" name="empName" ngModel><br/>
+        <input type="number" class="form-group"  Placeholder="salary"  name="salary" ngModel><br/>
+        <input type="text"   class="form-group"  Placeholder="gender"  name="gender" ngModel><br/>
+        <input type="date"   class="form-group"  Placeholder="doj"     name="doj"    ngModel><br/>
+        <input type="text"   class="form-group"  Placeholder="mobile"  name="mobile" ngModel><br/>
+    
+        <select type="text" class="form-group"  name="country" ngModel>
+            <option value={{country.alpha3Code}} *ngFor="let country of countryList">{{country.name}}</option>           
+        </select>
+        <br/>
+    
+        <input type="text"     class="form-group"  Placeholder="Login Id" name="loginId"  ngModel><br/>
+        <input type="password" class="form-group"  Placeholder="Password" name="password" ngModel><br/>
+        <button>Register</button>
+    </form>
+    </div>
+

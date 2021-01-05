@@ -1,0 +1,21 @@
+<h3>
+Age is: {{age}}<br/>
+Name is : {{name}}<br/>
+Salary is : {{salary}}<br/>
+Hobbies: 
+<ul>
+<li *ngFor='let hobby of hobbies'>{{hobby}}</li>
+</ul>
+
+Address:
+Door No: {{address.doorNo}}<br/>
+Street: {{address.street}}<br/>
+City: {{address.city}}<br/>
+</h3>
+<input type="text" [(ngModel)]="message">
+{{message}}
+
+<!-- TS to HTML 1 way Data Binding -->
+<!-- TS to HTML and HTML to TS 2 way Data Binding -->
+
+<button (click)="showMessage()">Click Here..</button>

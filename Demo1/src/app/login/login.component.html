@@ -1,0 +1,11 @@
+<form #loginForm="ngForm" (ngSubmit)="submitLoginForm(loginForm.value)" novalidate>
+<input type="text" Placeholder="Login Id" name="loginId" ngModel #loginId="ngModel" minlength=4 required><br/>
+<input type="password" Placeholder="Password" name="password" #password="ngModel" ngModel minlength=4 required><br/>
+<button [disabled]="!loginForm.valid">Login</button>
+</form>
+
+
+<div *ngIf="loginForm.touched && loginId.errors?.required">Please enter login id...</div>
+<div *ngIf="loginForm.touched && password.errors?.required">Please enter password id...</div>
+<div *ngIf="loginId.errors?.minlength">Please enter minimum 4 chars...</div>
+<div *ngIf="password.errors?.minlength">Please enter minlength 4 chars...</div>

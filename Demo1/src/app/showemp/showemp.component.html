@@ -1,0 +1,37 @@
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    </head>
+<div class="container">
+<table class="table table-bordered table-striped table-hover table-sm">
+    <thead>
+        <tr class="bg-info text-white">
+            <td>ID</td>
+            <td>Name</td>
+            <td>Salary</td>
+            <td>Gender</td>
+            <td>Join Date</td>
+            <td>LoginId</td>
+            <td>Password</td>
+            <td>Experience</td>
+            <td>EDIT</td>
+            <td>DELETE</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let employee of employees' align="center">
+            <td>{{employee.empId}}</td>
+            <td>{{employee.empName |uppercase |gender: employee.gender}}</td>
+            <td>{{employee.salary | currency: 'INR'}}</td>
+            <td>{{employee.gender}}</td>
+            <td>{{employee.doj |date:'dd-MMMM-yy'}}</td>
+            <td>{{employee.loginId | lowercase}}</td>
+            <td>{{employee.password}}</td>
+            <td>{{employee.doj | experience}}</td> 
+            <td><a href=''><div class="glyphicon glyphicon-pencil"></div></a></td>     
+            <td><a href=''><div class="glyphicon glyphicon-trash"></div></a></td> 
+        </tr>
+    </tbody>
+    </table>
+</div>
+
